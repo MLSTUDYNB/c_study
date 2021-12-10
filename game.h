@@ -2,13 +2,14 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define HANG 3
-#define LIE 3
+#define hang 9
+#define lie 9
+#define HANG hang+2
+#define LIE lie+2
+#define LEI_SHU 10
 
-void csh(char arr[HANG][LIE]);
-void print(char arr[HANG][LIE]);
-void playwj(char arr[HANG][LIE]);
-void playai(char arr[HANG][LIE]);
-
-char is_win(char arr[HANG][LIE]);
-char is_full(char arr[HANG][LIE]);
+void csh(char arr[HANG][LIE], char set);
+void dayin(char board[HANG][LIE]);
+void buzhi(char houduan[HANG][LIE]);
+void saolei(char huoduan[HANG][LIE], char yonghu[HANG][LIE]);
+void PDZW(char huoduan[HANG][LIE], char yonghu[HANG][LIE], int H, int L);

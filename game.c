@@ -1,112 +1,111 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include "game.h"
-int h, l;
-void csh(char arr[HANG][LIE])
+int H, L;
+void csh(char arr[HANG][LIE],char set)
 {
-	for (h = 0; h < HANG; h++)
+	for (H = 0; H < HANG; H++)
 	{
-		for (l = 0; l < LIE; l++)
+		for (L = 0; L < LIE; L++)
 		{
-			arr[h][l] = ' ';
+			arr[H][L] = set;
 		}
 	}
 }
-void print(char arr[HANG][LIE])
+void dayin(char board[HANG][LIE])
 {
-	for (h = 0; h < HANG; h++)
+	for (L = 0; L <= lie; L++)
 	{
-		for (l = 0; l < LIE; l++)
+		printf("%d ", L);
+	}
+	printf("\n");
+	for (H = 1; H <= hang; H++)
+	{
+		printf("%d ", H );
+		for (L = 1; L <= lie; L++)
 		{
-			printf(" %c ", arr[h][l]);
-			if (l < LIE - 1)
-			{
-				printf("|");
-			}
+			printf("%c ", board[H][L]);
 		}
 		printf("\n");
-		if (h < HANG - 1)
+	}
+}
+void buzhi(char houduan[HANG][LIE])
+{
+	int n=LEI_SHU;
+	while (n>0)
+	{
+		H = rand() % hang + 1;
+		L = rand() % lie + 1;
+		if (houduan[H][L] == '0')
 		{
-			for (l = 0; l < LIE; l++)
-			{
-				printf("---");
-				if (l < LIE - 1)
-				{
-					printf("|");
-				}
-			}
-			printf("\n");
+			houduan[H][L] = '1';
+			n--;
 		}
 	}
 }
-void playwj(char arr[HANG][LIE])
+void saolei(char huoduan[HANG][LIE], char yonghu[HANG][LIE])
 {
-	printf("请玩家下棋，下棋盘的坐标\n");
-	while (1)
-	{
-		scanf("%d%d", &h, &l);
-		if (h > 0 && h <= HANG && l > 0 && l <= LIE)
+	int n = hang*lie-LEI_SHU;
+	while (n>0)
+	{	
+		printf("请输入坐标->");
+		scanf("%d%d", &H, &L);
+		if (H >= 1 && H <= 9 && L >= 1 && L <= 9)
 		{
-			if (arr[h-1][l-1]==' ')
+			if (huoduan[H][L] == '1')
 			{
-				arr[h-1][l-1] = '*';
+				printf("哈哈，你被炸死了\n");
 				break;
 			}
 			else
 			{
-				printf("该位置已被覆盖\n");
+				PDZW(huoduan,yonghu, H, L);				//判断周围有没有雷
+				system("cls");
+				dayin(yonghu);
+				n--;
 			}
 		}
 		else
 		{
-			printf("请输入正确的组别坐标\n");
+			printf("请输入正确的坐标->");
 		}
 	}
-}
-void playai(char arr[HANG][LIE])
-{
-	printf("电脑下棋#子棋如下\n");
-	while (1)
+	if (n == 0)
 	{
-		h = rand() % HANG;
-		l = rand() % LIE;
-		if (arr[h][l] == ' ')
+		printf("恭喜你，扫雷成功\n");
+	}
+}
+void PDZW(char huoduan[HANG][LIE], char yonghu[HANG][LIE], int H, int L)
+{
+	int h = H;
+	int l = L;
+	int a = 0;
+	char sum = '0';
+	//for (h = H - 1; h <= H + 1; h++)
+	//{
+	//	for (l = L - 1; l <= L + 1; l++)
+	//	{
+	//		if (huoduan[h][l] == '0')
+	//		{
+	//			a++;
+	//		}
+	//	}
+	//}
+	//if (a == 9)
+	//{
+	//	PDZW(huoduan, yonghu, h, l);
+	//}
+	for (h = H - 1; h <= H + 1; h++)
+	{
+		for (l = L - 1; l <= L + 1; l++)
 		{
-			arr[h][l] = '#';
-			break;
+			if (huoduan[h][l] == '1')
+			{
+				//sum = sum + '1';
+				sum++;
+			}
 		}
 	}
-}
-/* * 玩家赢
-# 电脑赢
-q 平局
-c 游戏继续*/
-char is_win(char arr[HANG][LIE])
-{
-	for (h = 0; h < HANG; h++)
-	{
-		if (arr[h][0] == arr[h][1] && arr[h][1] == arr[h][2] && arr[h][0] != ' ')
-			return arr[h][0];
-	}
-	for (l = 0; l < LIE; l++)
-	{
-		if (arr[0][l] == arr[1][l] && arr[1][l] == arr[2][l]&&arr[0][l]!=' ')
-			return arr[0][l];
-	}
-	if (arr[0][0] == arr[1][1] && arr[1][1] == arr[2][2]&&arr[0][0]!=' ')
-		return arr[0][0];
-	if (arr[0][2] == arr[1][1] && arr[1][1] == arr[2][0]&&arr[0][2]!=' ')
-		return arr[0][2];
-	return is_full(arr);
-}
-char is_full(char arr[HANG][LIE])
-{
-	for (h = 0; h < HANG; h++)
-	{
-		for (l = 0; l < LIE; l++)
-		{
-			if (arr[h][l] == ' ')
-				return 'c';
-		}
-	}
-	return 'q';
+	if (sum == '0')
+		sum = ' ';
+	yonghu[H][L] = sum;
 }
