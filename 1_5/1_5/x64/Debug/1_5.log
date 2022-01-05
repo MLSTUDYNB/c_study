@@ -1,0 +1,4 @@
+﻿  1_5.c
+E:\c_study\1_5\1_5\1_5.c(54,6): warning C4013: “gets”未定义；假设外部返回 int
+E:\c_study\1_5\1_5\1_5.c(55,18): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  1_5.vcxproj -> E:\c_study\1_5\x64\Debug\1_5.exe
