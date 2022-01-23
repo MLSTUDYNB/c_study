@@ -1,29 +1,35 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include <stdio.h>
-void print(int* arr)
-{
-	int n;
-	for (n = 0; n < 5; n++)
-	{
-		printf("%d ", arr[n]);
-	}
-}
+
 int main()
 {
-	int arr[5] = { 1,2,3,4,5 };
-	int brr[5] = { 6,7,8,9,0 };
-	int temp, n;
-	for (n = 0; n < 5; n++)
-	{
-		temp = arr[n];
-		arr[n] = brr[n];
-		brr[n] = temp;
-	}
-	print(arr);
-	printf("\n");
-	print(brr);
+
 	return 0;
 }
+//void print(int* arr)
+//{
+//	int n;
+//	for (n = 0; n < 5; n++)
+//	{
+//		printf("%d ", arr[n]);
+//	}
+//}
+//int main()
+//{
+//	int arr[5] = { 1,2,3,4,5 };
+//	int brr[5] = { 6,7,8,9,0 };
+//	int temp, n;
+//	for (n = 0; n < 5; n++)
+//	{
+//		temp = arr[n];
+//		arr[n] = brr[n];
+//		brr[n] = temp;
+//	}
+//	print(arr);
+//	printf("\n");
+//	print(brr);
+//	return 0;
+//}
 //实现函数init() 初始化数组为全0
 //实现print()  打印数组的每个元素
 //实现reverse()  函数完成数组元素的逆置。
