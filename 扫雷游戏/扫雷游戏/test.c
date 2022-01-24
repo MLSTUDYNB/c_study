@@ -22,14 +22,14 @@ void game()
 	
 	//²¼À×
 	put(board, ROW, COL);
-	print(board, ROW, COL);
+	//print(board, ROW, COL);
 	//print(board, ROW, COL);
 	//É¨À×
 	while (s>0)
 	{
 		print(show, ROW, COL);
 		s=sweep_mine(board, show, ROW, COL);//×¢Òâ
-		
+		system("cls");
 	}
 	if (s == 0)
 	{
