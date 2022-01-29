@@ -1,0 +1,4 @@
+﻿  1_29.c
+E:\c_study\1_29\1_29\1_29.c(20,9): warning C4013: “gets”未定义；假设外部返回 int
+E:\c_study\1_29\1_29\1_29.c(21,21): warning C4013: “strlen”未定义；假设外部返回 int
+  1_29.vcxproj -> E:\c_study\1_29\x64\Debug\1_29.exe
