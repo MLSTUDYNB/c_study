@@ -56,3 +56,23 @@
 //    printf("%d\n", sum);
 //    return 0;
 //}
+#include <stdio.h>
+
+int main()
+{
+	int man = 1;
+	int boy1 = 0;
+	int boy2 = 0;
+	int boy3 = 0;
+	int n = 0;
+	scanf("%d", &n);
+	for (int i=1;i<n;i++)
+	{
+		man += boy3;
+		boy3 = boy2;
+		boy2 = boy1;
+		boy1 = man;
+	}
+	printf("%d\n", man + boy1 + boy2 + boy3);
+	return 0;
+}
