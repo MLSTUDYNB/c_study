@@ -6,6 +6,8 @@
 来调整该数组中数字的顺序使得数组中所有的奇数位于数组的前半部分，
 所有偶数位于数组的后半部分。
 */
+int arr[5] = { 1,2,3,4,5 };
+
 void sort(int* arr,int n)
 {
 	int left= 0;
@@ -37,7 +39,6 @@ void print(int* arr, int n)
 }
 int main()
 {
-	int arr[] = { 1,2,5,9,3,7,6,4,5,9,1,4,2,5,6,4 };
 	int n = sizeof(arr) / sizeof(arr[0]);
 	print(arr, n);
 	sort(arr, n);
