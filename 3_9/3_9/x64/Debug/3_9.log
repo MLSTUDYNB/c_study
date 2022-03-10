@@ -1,2 +1,10 @@
 ﻿  3_9.c
+E:\c_study\3_9\3_9\3_9.c(145,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“size_t”
+E:\c_study\3_9\3_9\3_9.c(145,9): message : 请考虑在格式字符串中使用“%zd”
+E:\c_study\3_9\3_9\3_9.c(146,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“size_t”
+E:\c_study\3_9\3_9\3_9.c(146,9): message : 请考虑在格式字符串中使用“%zd”
+E:\c_study\3_9\3_9\3_9.c(147,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“size_t”
+E:\c_study\3_9\3_9\3_9.c(147,9): message : 请考虑在格式字符串中使用“%zd”
+E:\c_study\3_9\3_9\3_9.c(148,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“size_t”
+E:\c_study\3_9\3_9\3_9.c(148,9): message : 请考虑在格式字符串中使用“%zd”
   3_9.vcxproj -> E:\c_study\3_9\x64\Debug\3_9.exe
