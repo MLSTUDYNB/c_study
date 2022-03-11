@@ -1,6 +1,3 @@
 ﻿  3_11.c
-E:\c_study\3_11\3_11\3_11.c(9,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“size_t”
-E:\c_study\3_11\3_11\3_11.c(9,9): message : 请考虑在格式字符串中使用“%zd”
-E:\c_study\3_11\3_11\3_11.c(11,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“size_t”
-E:\c_study\3_11\3_11\3_11.c(11,9): message : 请考虑在格式字符串中使用“%zd”
+E:\c_study\3_11\3_11\3_11.c(75,18): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
   3_11.vcxproj -> E:\c_study\3_11\x64\Debug\3_11.exe
