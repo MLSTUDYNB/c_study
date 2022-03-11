@@ -49,17 +49,34 @@
 //	printf("%d\n", p2 - p1);
 //	return 0;
 //}
+//int main()
+//{
+//	int arr[] = { 1,2,3,4,5,6,7,8 };
+//	int* p;
+//	for (p=arr;p<=&arr[7];p++)
+//	{
+//		;
+//	}
+//	for (p = &arr[7]; p >= arr; p--)
+//	{
+//		;
+//	}
+//	return 0;
+//}
+void f(int (*p)[5],int n)
+{
+	int i, j;
+	for (i=0;i<5;i++)
+	{
+		for (j=0;j<5;j++)
+		{
+			*(*(p + i) + j) = 1;
+		}
+	}
+}
 int main()
 {
-	int arr[] = { 1,2,3,4,5,6,7,8 };
-	int* p;
-	for (p=arr;p<=&arr[7];p++)
-	{
-		;
-	}
-	for (p = &arr[7]; p >= arr; p--)
-	{
-		;
-	}
+	int arr[5][5]={1,2,3,4,5,6,7};
+	f(arr,5);
 	return 0;
 }
