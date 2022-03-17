@@ -25,6 +25,10 @@ int cmp_stu_nume(const void* a, const void* b)
 			size_t count,
 			size_t size,
 			int (*comp)(const void *, const void *) );*/
+quick_sort()
+{
+
+}
 void swap(char* e1,char* e2,int size)
 {
 	int i = 0;
@@ -52,6 +56,9 @@ void my_qsort(void* ptr, int n, int size, int(*cmp)(const void* a, const void* b
 		//½»»»
 		swap((char*)ptr + (i * size), (char*)ptr + (j * size),size);
 	}
+	swap((char*)ptr , (char*)ptr + (j * size), size);
+	my_qsort(ptr,  i, size, cmp_stu_age);
+	my_qsort((char*)ptr+i*size,  j,  size, cmp_stu_age);
 
 }
 //void my_qsort(void* ptr,int n,int size,int(*cmp)(const void*,const void*) )
