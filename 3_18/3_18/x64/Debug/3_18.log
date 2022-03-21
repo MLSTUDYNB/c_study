@@ -1,2 +1,3 @@
 ﻿  3_18.c
+E:\c_study\3_18\3_18\3_18.c(141,11): warning C4133: “函数”: 从“int *”到“const char *const ”的类型不兼容
   3_18.vcxproj -> E:\c_study\3_18\x64\Debug\3_18.exe

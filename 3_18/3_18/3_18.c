@@ -2,7 +2,7 @@
 /*分别利用递归法和数组法求Fibonacci数列的前40项，比较两种方法的运行效率。
 其中Fibonacci数列F(n)的定义为： F(0) = 0,F(1) = 1,F(n) = F(n − 1) + F(n − 2)。*/
 
-//#include <stdio.h>
+#include <stdio.h>
 //
 //int main()
 //{
@@ -111,23 +111,34 @@
 //}
 //int a = 4, b = 5;
 /*编写一个函数，求两个整数的最大公约数。要求把最大公约数设为全局变量，它的值不由函数返回。*/
-#include <stdio.h>
-int i;
-void f(int n,int m,int* i)
-{
-	while (n%m)
-	{
-		*i = n % m;
-		n = m;
-		m = *i;
-	}
-	*i = m;
-}
+//#include <stdio.h>
+//int i;
+//void f(int n,int m,int* i)
+//{
+//	while (n%m)
+//	{
+//		*i = n % m;
+//		n = m;
+//		m = *i;
+//	}
+//	*i = m;
+//}
+//int main()
+//{
+//	int n, m;
+//	scanf("%d%d", &n, &m);
+//	f(n,m,&i);
+//	printf("%d\n", i);
+//	return 0;
+//}
 int main()
 {
-	int n, m;
-	scanf("%d%d", &n, &m);
-	f(n,m,&i);
-	printf("%d\n", i);
+	int a[5] = { 1,2,3,4,5 };
+	int* p = a;
+	int i;
+	for (i = 0; i < 4; i++)
+	{
+		
+	}
 	return 0;
 }
