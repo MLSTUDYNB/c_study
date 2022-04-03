@@ -1,4 +1,1 @@
-﻿  4_1.c
-E:\c_study\4_1\4_1\4_1.c(65,6): warning C4013: “gets”未定义；假设外部返回 int
-E:\c_study\4_1\4_1\4_1.c(66,16): warning C4013: “strlen”未定义；假设外部返回 int
-  4_1.vcxproj -> E:\c_study\4_1\x64\Debug\4_1.exe
+﻿  4_1.vcxproj -> E:\c_study\4_1\x64\Debug\4_1.exe
