@@ -14,10 +14,29 @@ int find_people(char* name_x,const contacts* p)
 	return -1;
 }
 
+//void init_contacts(contacts* p)
+//{
+//	p->count = 0;
+//	memset(p->human, 0, sizeof(p->human));
+//}
 void init_contacts(contacts* p)
 {
+	p->human = (people*)malloc(sizeof(people) * 3);
 	p->count = 0;
-	memset(p->human, 0, sizeof(p->human));
+	p->max = 3;
+}
+//扩容
+void enlarge(contacts* p)
+{
+	p->max += 3;
+	people* temp=(people*)realloc(p->human,sizeof(people) * p->max);
+	if (temp == NULL)
+	{
+		printf("%s\n", strerror(errno));
+		return;
+	}
+	p->human = temp;
+	
 }
 //姓名，性别，年龄，电话，地址
 void print_contacts(const contacts* p)
@@ -32,10 +51,14 @@ void print_contacts(const contacts* p)
 
 void add_contacts(contacts* p)
 {
-	if (p->count == human_max)
+	/*if (p->count == human_max)
 	{
 		printf("通讯录已满");
 		return;
+	}*/
+	if (p->count == p->max)
+	{
+		enlarge(p);
 	}
 	printf("请输入人的姓名->");
 	scanf("%s", p->human[p->count].name);

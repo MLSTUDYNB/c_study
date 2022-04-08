@@ -27,6 +27,8 @@ void test()
 		{
 		case quit:
 			printf("ÍË³ö³ÌĞò\n");
+			free(con.human);
+			con.human = NULL;
 			break;
 		case add://Ìí¼Ó
 			add_contacts(&con);

@@ -4,10 +4,12 @@
 #include <string.h>
 #include <stdlib.h>
 
+
 #define name_max 15
 #define sex_max 5
 #define tele_max 12
 #define address_max 30
+
 #define human_max 1000
 
 typedef struct people
@@ -19,10 +21,17 @@ typedef struct people
 	char address[address_max];
 }people;
 
+//typedef struct contacts
+//{
+//	people human[human_max];
+//	int count;
+//	
+//}contacts;
 typedef struct contacts
 {
-	people human[human_max];
+	people* human;
 	int count;
+	int max;
 }contacts;
 
 enum select
