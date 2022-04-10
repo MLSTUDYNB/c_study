@@ -19,12 +19,7 @@ int find_people(char* name_x,const contacts* p)
 //	p->count = 0;
 //	memset(p->human, 0, sizeof(p->human));
 //}
-void init_contacts(contacts* p)
-{
-	p->human = (people*)malloc(sizeof(people) * 3);
-	p->count = 0;
-	p->max = 3;
-}
+
 //扩容
 void enlarge(contacts* p)
 {
@@ -36,7 +31,41 @@ void enlarge(contacts* p)
 		return;
 	}
 	p->human = temp;
-	
+	printf("扩容成功\n");
+}
+
+void add_store(contacts* p)
+{
+	FILE* s = fopen("通讯录.txt", "rb");
+	if (s == NULL)
+	{
+		printf("文件信息读入出错%s", strerror(errno));
+		return;
+	}
+	people temp;
+	while (fread(&temp, sizeof(people), 1, s))
+	{
+		p->human[p->count] = temp;
+		p->count++;
+		if (p->count == p->max)
+			enlarge(p);
+	}
+	fclose(s);
+	s = NULL;
+}
+
+void init_contacts(contacts* p)
+{
+	p->human = (people*)malloc(sizeof(people) * 3);
+	if (p->human == NULL)
+	{
+		printf("初始化失败%s", strerror(errno));
+		return;
+	}
+	p->count = 0;
+	p->max = 3;
+	memset(p->human, 0, p->max*sizeof(p->human));
+	add_store(p);
 }
 //姓名，性别，年龄，电话，地址
 void print_contacts(const contacts* p)
@@ -144,4 +173,21 @@ void sort_contacts(contacts* p)
 {
 	qsort(p->human, p->count, sizeof(p->human[0]), cmp_name);
 	printf("排序成功\n");
+}
+
+void store(const contacts* p)
+{
+	FILE* s = fopen("通讯录.txt", "wb");
+	if (s == NULL)
+	{
+		printf("文件信息读入出错%s", strerror(errno));
+		return;
+	}
+	int i = 0;
+	for (i = 0; i < p->count; i++)
+	{
+		fwrite(p->human+i, sizeof(people), 1, s);
+	}
+	fclose(s);
+	s = NULL;
 }

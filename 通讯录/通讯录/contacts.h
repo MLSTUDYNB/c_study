@@ -60,3 +60,5 @@ void delete_contacts(contacts* p);
 void change_contacts(contacts* p);
 //按名字排序
 void sort_contacts(contacts* p);
+//保存到文件中
+void store(const contacts* p);

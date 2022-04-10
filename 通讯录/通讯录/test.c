@@ -26,6 +26,7 @@ void test()
 		switch (n)
 		{
 		case quit:
+			store(&con);
 			printf("ÍË³ö³ÌÐò\n");
 			free(con.human);
 			con.human = NULL;
