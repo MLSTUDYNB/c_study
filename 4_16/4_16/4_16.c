@@ -5,9 +5,8 @@
 #include <stdlib.h>
 void my_nextval(int* nextval, char* p, int n)
 {
-	int k = 0, j = 1, i = 0;
+	int k = -1, j = 0;
 	nextval[0] = -1;
-	nextval[1] = 0;
 	while (j < n)
 	{
 		if (k == -1|| p[j] == p[k])
