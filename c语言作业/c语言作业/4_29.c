@@ -1,14 +1,75 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 //用结构体指针变量作函数参数编程，计算一组学生的平均成绩和不及格人数。
 #include <stdlib.h>
-
+#include <assert.h>
 #include <stdio.h> 
 #include <string.h> 
+struct ListNode {
+    int val;
+    struct ListNode* next;
+}; 
+struct ListNode* partition(struct ListNode* pHead, int x) {
+    struct ListNode* head1, * head2, * tail1, * tail2;
+    head1 = tail1 = head2 = tail2 = NULL;
+    while (pHead)
+    {
+        if (pHead->val < x)
+        {
+            if (tail1 == NULL)
+            {
+                head1 = tail1 = pHead;
+            }
+            else
+            {
+                tail1->next = pHead;
 
+                tail1 = tail1->next;
+            }
 
-int mian()
+        }
+        else
+        {
+            if (tail2 == NULL)
+            {
+                head2 = tail2 = pHead;
+            }
+            else
+            {
+                tail2->next = pHead;
+                tail2 = tail2->next;
+            }
+        }
+        pHead = pHead->next;
+    }
+    if (head1 == NULL)
+        return head2;
+    if (head2 == NULL)
+        return head1;
+    tail2->next = NULL;
+    tail1->next = head2;
+
+    struct ListNode* head = head1;
+    return head;
+}
+int main()
 {
+    int i = 0;
+    struct ListNode* a[10];
+    for (i = 0; i < 3; i++)
+    {
+        a[i] = (struct ListNode*) malloc(sizeof(struct ListNode));
+        assert(a[i]);
 
+    }
+    for (i = 0; i < 2; i++)
+    {
+        a[i]->next = a[i + 1];
+    }
+    a[i]->next = NULL;
+    a[0]->val = 3;
+    a[1]->val = 3;
+    a[2]->val = 3;
+    partition(*a,3);
 	return 0;
 }
 //typedef struct student
