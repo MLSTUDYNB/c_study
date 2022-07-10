@@ -144,12 +144,40 @@
 //}
 #include <stdio.h>
 #include <math.h>
-#define s (a+b+c)/2
-#define area(a,b,c) sqrt((s)*(s-a)*(s-b)*(s-c))
-int main()
-{
-	double a, b, c;
-	scanf("%lf%lf%lf", &a, &b, &c);
-	printf("面积：%lf\n", area(a, b, c));
-	return 0;
-}
+//#define s (a+b+c)/2
+//#define area(a,b,c) sqrt((s)*(s-a)*(s-b)*(s-c))
+//int main()
+//{
+//	double a, b, c;
+//	scanf("%lf%lf%lf", &a, &b, &c);
+//	printf("面积：%lf\n", area(a, b, c));
+//	return 0;
+//}
+
+//void sort(int num[], int n)
+//{
+//
+//}
+//
+//int main()
+//{
+//	sort(arr, 10);
+//	FILE* p = fopen("c:\f1.txt", "r");
+//	if (p == NULL)
+//	{
+//		exit(-1);
+//	}
+//	fwrite(arr, 4, 10, p);
+//	fread(arr, 4, 10, p);
+//	fprintf(p, "%d", arr);
+//	fclose(p);
+//	p = NULL;
+//	return 0;
+//}
+
+//int main()
+//{
+//	float a = 9 %-3;
+//	printf("%f\n", a);
+//	return 0;
+//}
