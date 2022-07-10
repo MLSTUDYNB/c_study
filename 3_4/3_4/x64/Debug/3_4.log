@@ -1,3 +1,0 @@
-﻿  3_4.c
-E:\c_study\3_4\3_4\3_4.c(9,6): warning C4013: “gets”未定义；假设外部返回 int
-  3_4.vcxproj -> E:\c_study\3_4\x64\Debug\3_4.exe
