@@ -1,0 +1,3 @@
+﻿  3_20.c
+E:\c_study\3_20\3_20\3_20.c(59): warning C4715: “my_strstr”: 不是所有的控件路径都返回值
+  3_20.vcxproj -> E:\c_study\3_20\x64\Debug\3_20.exe

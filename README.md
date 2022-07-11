@@ -1,5 +1,9 @@
 # c/c++学习笔记
 
+[TOC]
+
+
+
 # c
 
 
@@ -83,11 +87,17 @@ int main()
 }
 ```
 
-![image-20220710104224127](C:\Users\ML\AppData\Roaming\Typora\typora-user-images\image-20220710104224127.png)
+![image-20220710104224127](https://s2.loli.net/2022/07/10/kXGqKPebZWjQAOl.png)
 
 为什么c++支持函数重载，而c不支持函数重载呢？
 
+这是因为c++有函数名的修饰，函数修饰的规则为`_Z+函数长度+函数名+参数类型的首字母` ，而 c 语言没有这种修饰规则。
 
+### extren “C”
+
+当c++中想用C语言，该怎么使用呢？
+
+那么我们只需要把使用c语言的部分用`extern “C”`包围住就行。
 
 
 
@@ -105,7 +115,7 @@ int main()
 
 ```
 
-![image-20220710105335463](C:\Users\ML\AppData\Roaming\Typora\typora-user-images\image-20220710105335463.png)
+![image-20220710105335463](https://s2.loli.net/2022/07/10/cGvbZ3K46OeFL8W.png)
 
 引用做返回值时，要注意不能返回局部变量，否则会造成越界访问。
 
@@ -125,11 +135,13 @@ int main()
 }
 ```
 
-![image-20220710110437855](C:\Users\ML\AppData\Roaming\Typora\typora-user-images\image-20220710110437855.png)
+![image-20220710110437855](https://s2.loli.net/2022/07/10/wi72EHclYjAsQxT.png)
 
-![image-20220710110506089](C:\Users\ML\AppData\Roaming\Typora\typora-user-images\image-20220710110506089.png)
+![image-20220710110506089](https://s2.loli.net/2022/07/10/QWKrI8P1UCBOjVx.png)
 
 那里的a为局部变量，当函数调用完成的时候，局部变量被销毁，对此时的空间在进行访问就是非法的。
+
+### 常引用
 
 
 
@@ -140,6 +152,25 @@ int main()
 	const double& pa2 = a;
 
 ```
+
+对于上面的a来说，它是整型，有读和写的性质。pa只具有读的性质，可以把a给pa。
+
+pa1为double型的，a为整型，需要整型提升。在整型提升的时候，a本身是不变化的，此时会创建一个临时空间。而这个空间的别名就是pa1，但是这个空间里面的数据为常量，是不能被改变的，所以要有const进行修饰才可以，让它只具有读的功能。
+
+```c++
+	int a = 10;
+	const int& pa = a;
+	const double& pa2 = a;
+	printf("&a=%p\n", &a);
+	printf("&pa=%p\n", &pa);
+	printf("&pa2=%p\n", &pa2);
+```
+
+![image-20220710181111210](https://s2.loli.net/2022/07/10/RLAk2fCYGs6mU38.png)
+
+从上面的运行结果可以看出，pa2的并本身并不是a处的空间了。
+
+==可以进一步看看汇编：==
 
 
 
@@ -152,3 +183,4 @@ int main()
 3.有空指针，没有空引用
 
 4.引用比指针较为安全。
+
