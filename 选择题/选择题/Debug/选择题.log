@@ -1,0 +1,3 @@
+﻿  test.c
+E:\c_study\选择题\选择题\test.c(112,16): warning C4018: “<”: 有符号/无符号不匹配
+  选择题.vcxproj -> E:\c_study\选择题\Debug\选择题.exe
