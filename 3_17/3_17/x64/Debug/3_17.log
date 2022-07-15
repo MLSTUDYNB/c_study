@@ -1,5 +1,0 @@
-﻿  3_17.c
-E:\c_study\3_17\3_17\3_17.c(6,18): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
-E:\c_study\3_17\3_17\3_17.c(12,22): warning C4244: “函数”: 从“int”转换到“float”，可能丢失数据
-E:\c_study\3_17\3_17\3_17.c(12,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“double”
-  3_17.vcxproj -> E:\c_study\3_17\x64\Debug\3_17.exe

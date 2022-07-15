@@ -1,4 +1,0 @@
-﻿  1_30.c
-E:\c_study\1_30\1_30\1_30.c(175,6): warning C4013: “gets”未定义；假设外部返回 int
-E:\c_study\1_30\1_30\1_30.c(176,24): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-  1_30.vcxproj -> E:\c_study\1_30\x64\Debug\1_30.exe
