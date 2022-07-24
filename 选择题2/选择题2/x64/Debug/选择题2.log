@@ -1,0 +1,4 @@
+﻿  test.c
+E:\c_study\选择题2\选择题2\test.c(126,17): warning C4101: “y”: 未引用的局部变量
+E:\c_study\选择题2\选择题2\test.c(126,10): warning C4101: “x”: 未引用的局部变量
+  选择题2.vcxproj -> E:\c_study\选择题2\x64\Debug\选择题2.exe
