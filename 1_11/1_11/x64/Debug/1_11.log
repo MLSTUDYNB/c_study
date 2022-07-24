@@ -1,3 +1,0 @@
-﻿  1_11.c
-E:\c_study\1_11\1_11\1_11.c(90,15): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
-  1_11.vcxproj -> E:\c_study\1_11\x64\Debug\1_11.exe

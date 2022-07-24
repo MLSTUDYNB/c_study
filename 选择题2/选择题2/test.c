@@ -1,7 +1,11 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
+<<<<<<< HEAD
 //#include<stdio.h>
 //#define ADD(x,y) x+y
+=======
+#include<stdio.h>
+>>>>>>> eb4a1778e030959351c8a7d89edae0b19dfae3bd
 //#define Mul(x,y) ++x*++y
 //int main()
 //{
@@ -67,6 +71,7 @@
 //print(str);
 //return 0;
 //} 
+<<<<<<< HEAD
 #include <stdio.h>
 //
 //
@@ -323,3 +328,5 @@ int main(void)
 //
 //    return 0;
 //}
+=======
+>>>>>>> eb4a1778e030959351c8a7d89edae0b19dfae3bd

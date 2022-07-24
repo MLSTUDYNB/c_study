@@ -1,3 +1,0 @@
-﻿  3_11.c
-E:\c_study\3_11\3_11\3_11.c(75,18): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
-  3_11.vcxproj -> E:\c_study\3_11\x64\Debug\3_11.exe
